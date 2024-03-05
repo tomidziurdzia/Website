@@ -20,10 +20,9 @@ const EmailSection = () => {
     const res = await fetch("/api", {
       method: "POST",
       body: JSON.stringify(datos),
-      headers: {
-        "Content-Type": "application/json",
-      },
     });
+
+    console.log(res);
 
     const respuesta = await res.json();
     console.log(respuesta.message);
