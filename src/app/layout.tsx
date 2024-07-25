@@ -6,9 +6,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Tomas Dziurdzia",
-  description: "Fullstack Developer",
+  description: "Software Engineer",
   icons: {
-    icon: "../../public/images/icon.png",
+    icon: "../../public/images/hero-image.jpg",
   },
 };
 

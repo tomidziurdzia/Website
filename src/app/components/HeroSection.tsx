@@ -8,7 +8,7 @@ import Link from "next/link";
 const HeroSection = () => {
   return (
     <section className="lg:py-16">
-      <div className="grid grid-cols-1 sm:grid-cols-12">
+      <div className="flex flex-col w-full md:flex-row md:justify-between">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -21,7 +21,7 @@ const HeroSection = () => {
             </span>
             <br></br>
             <TypeAnimation
-              className="text-2xl md:text-7xl"
+              className="text-2xl md:text-7xl text-center"
               sequence={[
                 "Tomas",
                 1000,
@@ -42,7 +42,7 @@ const HeroSection = () => {
             />
           </h1>
 
-          <div>
+          <div className="w-full">
             <Link
               href="/#contact"
               className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
