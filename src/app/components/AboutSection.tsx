@@ -1,6 +1,7 @@
 "use client";
 import React, { useTransition, useState } from "react";
 import TabButton from "./TabButton";
+import Experience from "./Experience";
 
 interface Props {
   title: string;
@@ -42,22 +43,18 @@ const TAB_DATA: Props[] = [
     content: (
       <div className="text-xl flex flex-col gap-2">
         <div className="flex flex-col sm:flex-row sm:gap-2 mb-2 ">
-          <p className="font-bold">{"Bachelor's Degree in Computer Science"}</p>
-          <span className="text-gray">
-            XXI Century University | Jul 2022 - present
-          </span>
+          <p className="font-bold">Software Engineer</p>
+          <span className="text-gray">Arol.Dev Mentorship | 2024</span>
         </div>
         <div className="flex flex-col sm:flex-row sm:gap-2 mb-2 ">
-          <p className="font-bold">Fullstack Developer</p>
+          <p className="font-bold">{"Bachelor's Degree in Computer Science"}</p>
           <span className="text-gray">
-            Henry Bootcamp | Dec 2021 - Jun 2022
+            University Siglo XXI (Argentina) | 2022 - present
           </span>
         </div>
         <div className="flex flex-col sm:flex-row sm:gap-2 mb-2 ">
           <p className="font-bold">Web Developer</p>
-          <span className="text-gray">
-            Coderhouse Institute | Aug 2021 - Dec 2022
-          </span>
+          <span className="text-gray">Coderhouse Institute | 2021 - 2022</span>
         </div>
       </div>
     ),
@@ -103,47 +100,55 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white" id="about">
-      <div className=" gap-8 items-center py-8 xl:gap-16 sm:py-16 ">
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
-          <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-start mt-8 text-md sm:text-2xl">
-            <TabButton
-              selectTab={() => handleTabChange("technologies")}
-              active={tab === "technologies"}
-            >
-              {" "}
-              Technologies{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("education")}
-              active={tab === "education"}
-            >
-              {" "}
-              Education{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("soft-skills")}
-              active={tab === "soft-skills"}
-            >
-              {" "}
-              Soft Skills{" "}
-            </TabButton>
-          </div>
-          <div className="mt-8">
-            {TAB_DATA.find((t) => t.id === tab)!.content}
+    <>
+      <section className="text-white" id="about">
+        <div className=" gap-8 items-center py-8 xl:gap-16 sm:py-16 ">
+          <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
+            <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+            <p className="text-base lg:text-lg">
+              I am Tomas, a creative and passionate Software Engineer with a
+              solid experience in web application development and business
+              logistics. I excel in creating innovative solutions that drive
+              business success and enhance user experience.
+              <br /> I am passionate about working in collaborative teams and
+              using the latest tools and techniques to deliver exceptional
+              results! I am always seeking new challenges where I can apply my
+              skills and contribute to project success. Feel free to reach out
+              to me for collaboration or networking opportunities.
+            </p>
+            <div>
+              <Experience />
+            </div>
+            <div className="flex flex-col sm:flex-row justify-start mt-8 text-md sm:text-2xl">
+              <TabButton
+                selectTab={() => handleTabChange("technologies")}
+                active={tab === "technologies"}
+              >
+                {" "}
+                Technologies{" "}
+              </TabButton>
+              <TabButton
+                selectTab={() => handleTabChange("education")}
+                active={tab === "education"}
+              >
+                {" "}
+                Education{" "}
+              </TabButton>
+              <TabButton
+                selectTab={() => handleTabChange("soft-skills")}
+                active={tab === "soft-skills"}
+              >
+                {" "}
+                Soft Skills{" "}
+              </TabButton>
+            </div>
+            <div className="mt-8">
+              {TAB_DATA.find((t) => t.id === tab)!.content}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

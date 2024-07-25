@@ -1,6 +1,7 @@
 import {
   AboutSection,
   EmailSection,
+  Experience,
   Footer,
   HeroSection,
   Navbar,
